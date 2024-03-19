@@ -24,12 +24,12 @@ class FileStorage:
 
     def all(self, cls=None):
         """Return a list of objects of the specified class"""
-        objects_filtered = {}
+        filtered_class = {}
         if cls:
             for key, value in FileStorage.__objects.items():
                 if value.__class__ == cls:
-                    objects_filtered[key] = value
-            return objects_filtered
+                    filtered_class[key] = value
+            return filtered_class
         return FileStorage.__objects
 
     def new(self, obj):
