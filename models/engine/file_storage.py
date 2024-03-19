@@ -59,7 +59,8 @@ class FileStorage:
     def delete(self, obj=None):
         """delete obj from __objects if it’s inside"""
         if obj:
-            del self.__objects['{}.{}'.format(type(obj).__name__, obj.id)]
+            del_obj = '{}.{}'.format(type(obj).__name__, obj.id)
+            del self.__objects[del_obj]
 
     def close(self):
         """Deserialize JSON file to objects"""
