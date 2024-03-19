@@ -26,11 +26,11 @@ class FileStorage:
         """Return a list of objects of the specified class"""
         objects_filtered = {}
         if cls:
-            for key, value in self.__objects.items():
+            for key, value in FileStorage.__objects.items():
                 if value.__class__ == cls:
                     objects_filtered[key] = value
             return objects_filtered
-        return self.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
@@ -57,7 +57,7 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
-        """delete obj from __objects if it’s inside"""
+        """delete obj"""
         if obj:
             del_obj = '{}.{}'.format(type(obj).__name__, obj.id)
             del self.__objects[del_obj]
