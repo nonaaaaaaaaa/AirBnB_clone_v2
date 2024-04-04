@@ -1,1 +1,1 @@
-airbnb-clone2
+web-static
